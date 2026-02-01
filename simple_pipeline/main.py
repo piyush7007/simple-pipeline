@@ -3,6 +3,13 @@
 This example omits many best practices (e.g. logging, error handling,
 parameterizatin + config files, etc.) for the sake of a brief, minimal example.
 """
+"""
+Modified by: PB
+Date: February 1, 2026
+Purpose: CI/CD with Databricks
+Changes: Added custom logging and documentation
+"""
+
 
 import logging
 import os
@@ -81,8 +88,18 @@ def main(src, dest, local_src, validate_data, options):
     load.to_table(df, dest, PG_CONN_STRING)
     logger.info(f"Data loaded to bit.io.")
 
+# This pipeline has been modified as part of CI/CD learning
+# Original source: https://github.com/databricks/simple-pipeline
+# Learning objectives: Git workflow, branch management, code deployment
+
 
 if __name__ == '__main__':
+    print("=" * 50)
+    print("CUSTOM PIPELINE RUN - Modified Version")
+    print(f"Executed by: PB")
+    print(f"Branch: dev")
+    print("=" * 50)
+
     # Parse command line options and arguments
     logger.info('Parsing command...')
     opts = [opt[1:] for opt in sys.argv[1:] if opt.startswith("-")]
